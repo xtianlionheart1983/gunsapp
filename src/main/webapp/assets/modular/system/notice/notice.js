@@ -75,12 +75,12 @@ layui.use(['layer', 'form', 'table', 'admin', 'HttpRequest', 'func'], function (
                 Feng.success("删除成功!");
                 table.reload(Notice.tableId);
             }, function (data) {
-                Feng.error("删除失败!" + data.message + "!");
+                Feng.error("删除失败!" + data.responseJSON.message + "!");
             });
             ajax.set("noticeId", data.noticeId);
             ajax.start(true);
         };
-        Feng.confirm("是否删除通知 " + data.noticeTitle + "?", operation);
+        Feng.confirm("是否删除通知 " + data.title + "?", operation);
     };
 
     // 渲染表格
